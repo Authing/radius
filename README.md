@@ -21,7 +21,7 @@
 
 * 首先要准备一台支持 java 的服务器用来安装 Authing Radius Agent
 
-* 确保设备安装了 java 11 及以上版本
+* 确保设备安装了 java 11 或以上版本
 
 * 将步骤一下载的安装包拷贝至设备文件系统，如：/root/radius/AuthingRadius.jar
 
