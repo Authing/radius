@@ -27,7 +27,11 @@
 
 <br>
 
-# 步骤三：配置 Authing Radius Agent
+# 步骤三：在 Authing 控制台创建 Radius 应用
+
+<br>
+
+# 步骤四：配置 Authing Radius Agent
 
 cd 到目标设备上 Agent 所在目录，创建 config.json，填入以下配置信息：
 
@@ -50,10 +54,6 @@ cd 到目标设备上 Agent 所在目录，创建 config.json，填入以下配�
 |  userPoolId     |    字符串   |   authing 用户池 id  |       |
 |  appId     |    字符串   |   authing radius 应用 id  |       |
 |  sharedSecret     |    字符串   |   authing radius 应用的 SharedSecret  |       |
-
-<br>
-
-# 步骤四：在 Authing 控制台创建 Radius 应用
 
 <br>
 
