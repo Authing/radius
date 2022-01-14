@@ -58,22 +58,24 @@ cd 到目标设备上 Agent 所在目录，创建 config.json，填入以下配�
 ```json
 {
   "scheme": "https",
-  "authingHost": "core.authing.cn",
   "port": 1812,
   "userPoolId": "your authing user pool id",
   "appId": "your authing radius app id",
-  "sharedSecret": "copy from your authing radius app in authing console"
+  "sharedSecret": "copy from your authing radius app in authing console",
+  "authingHost": "core.authing.cn",
+  "publicKey": "authing public key"
 }
 ```
 
 | 参数名       |  类型  |                          说明                           |     默认值      |
 | ------------ | :----: | :-----------------------------------------------------: | :-------------: |
 | scheme       | 字符串 |               发送给 authing 的请求 sheme               |      https      |
-| authingHost  | 字符串 |      若私有化部署了 authing，需要填写私有化的域名       | core.authing.cn |
 | port         |  整数  | Radius 服务端口，需要和 Radius 客户端应用程序的设置匹配 |      1812       |
 | userPoolId   | 字符串 |                    authing 用户池 id                    |                 |
 | appId        | 字符串 |                 authing radius 应用 id                  |                 |
 | sharedSecret | 字符串 |           authing radius 应用的 SharedSecret            |                 |
+| authingHost  | 字符串 |      若私有化部署了 authing，需要填写私有化的域名       | core.authing.cn |
+| publicKey    | 字符串 |           authing 服务的公钥。在私有化部署场景需要指定           |        SaaS 版本默认值         |
 
 <br>
 
@@ -113,4 +115,11 @@ java -jar AuthingRadiusClient.jar 192.168.1.100 1234567890 test 123456
 nohup java -jar AuthingRadius.jar > /dev/null &
 ```
 
-2. Agent 日志和 Agent 在同一目录下，文件名：radius.log
+2. 对 config.json 的任何修改都需要重启 Agent。注意需要先退出运行的 Agent，否则会报端口被占用。在 Linux 系统下，可以考虑使用类似下面的脚本：
+```shell
+kill -9 `lsof -t -i:1812`
+nohup java -jar AuthingRadius.jar > /dev/null &
+echo
+```
+
+3. Agent 日志和 Agent 在同一目录下，文件名：radius.log
