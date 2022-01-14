@@ -13,21 +13,41 @@
 
 </div>
 
-# 步骤一：[下载Authing Radius Agent](https://github.com/Authing/radius/releases/download/1.0.0/AuthingRadius.jar)
+# 步骤一：[下载 Authing Radius Agent](https://github.com/Authing/radius/releases/download/1.0.0/AuthingRadius.jar)
 
 <br>
 
 # 步骤二：安装 Authing Radius Agent
 
-* 首先要准备一台支持 java 的服务器用来安装 Authing Radius Agent
+- 首先要准备一台支持 java 的服务器用来安装 Authing Radius Agent
 
-* 确保设备安装了 java 11 或以上版本
+- 确保设备安装了 java 11 或以上版本
 
-* 将步骤一下载的安装包拷贝至设备文件系统，如：/root/radius/AuthingRadius.jar
+- 将步骤一下载的安装包拷贝至设备文件系统，如：/root/radius/AuthingRadius.jar
 
 <br>
 
 # 步骤三：在 Authing 控制台创建 Radius 应用
+
+在 Authing 控制 **应用** -> **单点登录 SSO** 页面点击「添加应用」
+
+![](./images/1.png)
+
+找到 **Radius 应用**，点击进入创建界面，然后点击「获取应用」
+
+![](./images/2.png)
+
+填写应用名
+
+![](./images/3.png)
+
+点击「下一步」，可以看到需要的配置信息
+
+![](./images/4.png)
+
+点击「完成」，进入**访问授权**，给用户授权访问权限
+
+![](./images/5.png)
 
 <br>
 
@@ -46,14 +66,14 @@ cd 到目标设备上 Agent 所在目录，创建 config.json，填入以下配�
 }
 ```
 
-| 参数名                     | 类型 | 说明 | 默认值 |
-| ----------------------- |:--------:| :------:| :-----: |
-|  scheme     |    字符串    |  发送给 authing 的请求 sheme   |    https   |
-|  authingHost     |    字符串    |  若私有化部署了 authing，需要填写私有化的域名   |    core.authing.cn   |
-|  port     |    整数    |   Radius 服务端口，需要和 Radius 客户端应用程序的设置匹配   |    1812   |
-|  userPoolId     |    字符串   |   authing 用户池 id  |       |
-|  appId     |    字符串   |   authing radius 应用 id  |       |
-|  sharedSecret     |    字符串   |   authing radius 应用的 SharedSecret  |       |
+| 参数名       |  类型  |                          说明                           |     默认值      |
+| ------------ | :----: | :-----------------------------------------------------: | :-------------: |
+| scheme       | 字符串 |               发送给 authing 的请求 sheme               |      https      |
+| authingHost  | 字符串 |      若私有化部署了 authing，需要填写私有化的域名       | core.authing.cn |
+| port         |  整数  | Radius 服务端口，需要和 Radius 客户端应用程序的设置匹配 |      1812       |
+| userPoolId   | 字符串 |                    authing 用户池 id                    |                 |
+| appId        | 字符串 |                 authing radius 应用 id                  |                 |
+| sharedSecret | 字符串 |           authing radius 应用的 SharedSecret            |                 |
 
 <br>
 
@@ -62,7 +82,7 @@ cd 到目标设备上 Agent 所在目录，创建 config.json，填入以下配�
 在 Authing Radius Agent 所在目录下，运行
 
 ```shell
-java -jar AuthingRadius.jar 
+java -jar AuthingRadius.jar
 ```
 
 <br>
