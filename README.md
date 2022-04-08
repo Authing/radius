@@ -13,7 +13,7 @@
 
 </div>
 
-# 步骤一：[下载 Authing Radius Agent](https://github.com/Authing/radius/releases/download/1.0.0/AuthingRadius.jar)
+# 步骤一：[下载 Authing Radius Agent](https://github.com/Authing/radius/releases/download/1.0.1/AuthingRadius.jar)
 
 <br>
 
@@ -79,7 +79,22 @@ cd 到目标设备上 Agent 所在目录，创建 config.json，填入以下配�
 
 <br>
 
-# 步骤五：启动 Authing Radius Agent
+# 步骤五：配置服务器证书
+
+Authing Radius Agent 支持协议包括：
+
+* PAP
+* EAP-GTC
+* EAP-TTLS-PAP
+* EAP-TTLS-GTC
+
+其中，EAP-TTLS-PAP、EAP-TTLS-GTC 协议要求配置服务器证书。
+
+首先在 AuthingRadius.jar 所在目录创建文件夹，命名为 cer，然后将证书以及私钥通过 openssl 命令转为 der 格式，拷贝到 cer 目录下。证书的文件名为：server.der；私钥的文件名为：server_pri.der
+
+<br>
+
+# 步骤六：启动 Authing Radius Agent
 
 在 Authing Radius Agent 所在目录下，运行
 
@@ -89,7 +104,7 @@ java -jar AuthingRadius.jar
 
 <br>
 
-# 步骤六：测试 / 验证 Radius 服务
+# 步骤七：测试 / 验证 Radius 服务
 
 可以用支持 Radius 的设备 / 应用程序进行测试。也可以下载我们的 [Authing Radius 测试客户端](https://github.com/Authing/radius/releases/download/1.0.0/AuthingRadiusClient.jar)
 
