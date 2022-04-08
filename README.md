@@ -13,7 +13,7 @@
 
 </div>
 
-# 步骤一：[下载 Authing Radius Agent](https://github.com/Authing/radius/releases/download/2.0.0/AuthingRadius.jar)
+# 步骤一：[下载 Authing Radius Agent](https://github.com/Authing/radius/releases/download/2.0.0/AuthingRadius-2.0.0.zip)
 
 <br>
 
