@@ -13,7 +13,7 @@
 
 </div>
 
-# 步骤一：[下载 Authing Radius Agent](https://github.com/Authing/radius/releases/download/1.0.1/AuthingRadius.jar)
+# 步骤一：[下载 Authing Radius Agent](https://github.com/Authing/radius/releases/download/2.0.0/AuthingRadius.jar)
 
 <br>
 
@@ -91,6 +91,8 @@ Authing Radius Agent 支持协议包括：
 其中，EAP-TTLS-PAP、EAP-TTLS-GTC 协议要求配置服务器证书。
 
 首先在 AuthingRadius.jar 所在目录创建文件夹，命名为 cer，然后将证书以及私钥通过 openssl 命令转为 der 格式，拷贝到 cer 目录下。证书的文件名为：server.der；私钥的文件名为：server_pri.der
+
+> 如果没有自己的证书，可以使用 zip 包里面的自签名证书
 
 <br>
 
